@@ -1,0 +1,9 @@
+D:\C#\Timepass\JustMail\JustMail\JustMail\bin\Debug\JustMail.exe.config
+D:\C#\Timepass\JustMail\JustMail\JustMail\bin\Debug\JustMail.exe
+D:\C#\Timepass\JustMail\JustMail\JustMail\bin\Debug\JustMail.pdb
+D:\C#\Timepass\JustMail\JustMail\JustMail\obj\Debug\JustMail.csprojResolveAssemblyReference.cache
+D:\C#\Timepass\JustMail\JustMail\JustMail\obj\Debug\JustMail.Form1.resources
+D:\C#\Timepass\JustMail\JustMail\JustMail\obj\Debug\JustMail.Properties.Resources.resources
+D:\C#\Timepass\JustMail\JustMail\JustMail\obj\Debug\JustMail.csproj.GenerateResource.Cache
+D:\C#\Timepass\JustMail\JustMail\JustMail\obj\Debug\JustMail.exe
+D:\C#\Timepass\JustMail\JustMail\JustMail\obj\Debug\JustMail.pdb
