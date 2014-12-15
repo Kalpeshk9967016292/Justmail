@@ -7,8 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Net.Mail;
 using System.Net;
+using System.Net.Mail;
+using System.Threading;
+using System.Xml;
+using System.ServiceModel.Syndication;
 
 namespace JustMail
 {
@@ -103,6 +106,54 @@ namespace JustMail
             catch (Exception ex)
             { 
             
+            }
+        }
+        public static void performinvoke(Control ctrl, Action act)
+        {
+            if (ctrl.InvokeRequired)
+            {
+                ctrl.Invoke(act);
+            }
+            else
+            {
+                act();
+            }
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            Thread.Sleep(5000);
+            //performinvoke(listBox1, () => { listBox1.BackColor = Color.Red; });
+            listBox1.ResetBackColor();
+            performinvoke(listBox1, () => { listBox1.Items.Clear(); });
+            try
+            {
+                string url = "http://emails2rss.appspot.com/rss?id=4f96e2490ddd404d51093a20b8ffdc1608ee";
+                //HttpWebRequest wr = (HttpWebRequest)WebRequest.Create(url);
+                //wr.UseDefaultCredentials = true;
+                //wr.Timeout = 10000;
+                XmlReader reader = XmlReader.Create(url);
+                SyndicationFeed feed = SyndicationFeed.Load(reader);
+                reader.Close();
+                foreach (SyndicationItem item in feed.Items)
+                {
+                    String subject = item.Title.Text;
+                    //String summary = item
+                    //listBox1.Items.Add(subject);
+                    performinvoke(listBox1, () => { listBox1.Items.Add(subject); });
+
+
+                }
+
+                if (listBox1.Items.Contains("Delivery Status Notification (Failure)"))
+                {
+                    performinvoke(listBox1, () => { listBox1.BackColor = Color.Red; });
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
             }
         }
 

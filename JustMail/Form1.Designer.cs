@@ -50,10 +50,14 @@
             this.button3 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -164,7 +168,7 @@
             this.exitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(335, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(781, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -182,27 +186,27 @@
             // showInboxToolStripMenuItem
             // 
             this.showInboxToolStripMenuItem.Name = "showInboxToolStripMenuItem";
-            this.showInboxToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.showInboxToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.showInboxToolStripMenuItem.Text = "Show Inbox";
             // 
             // minimizeToolStripMenuItem
             // 
             this.minimizeToolStripMenuItem.Name = "minimizeToolStripMenuItem";
-            this.minimizeToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.minimizeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.minimizeToolStripMenuItem.Text = "Minimize";
             this.minimizeToolStripMenuItem.Click += new System.EventHandler(this.minimizeToolStripMenuItem_Click);
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
             // 
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.logOutToolStripMenuItem.Text = "Log out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
@@ -270,12 +274,36 @@
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox4.UseSystemPasswordChar = true;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.listBox1);
+            this.groupBox3.Location = new System.Drawing.Point(329, 35);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(440, 327);
+            this.groupBox3.TabIndex = 13;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Inbox";
+            // 
+            // listBox1
+            // 
+            this.listBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(3, 16);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(434, 308);
+            this.listBox1.TabIndex = 0;
+            // 
+            // backgroundWorker1
+            // 
+            this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorker1_DoWork);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(335, 374);
+            this.ClientSize = new System.Drawing.Size(781, 374);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
@@ -296,6 +324,7 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.groupBox3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -325,6 +354,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
 
     }
 }
